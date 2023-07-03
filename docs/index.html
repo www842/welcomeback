@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title id="pageTitle"></title>
+<link rel="shortcut icon" href="https://i.imgur.com/dbACfA4.png">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {
+  font-family: "Raleway", sans-serif;
+}
+
+body, html {
+  height: 100%;
+}
+
+.bgimg {
+  background-image: url('https://i.imgur.com/r3J8ycD.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+#siteNameBottomLeft {
+  display: inline-block;
+}
+
+</style>
+</head>
+<body>
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge" id="siteNameTopLeft"></div>
+  <div class="w3-display-middle w3-center">
+    <h1 class="w3-jumbo w3-animate-top"><div id="siteNameCenter"></div></h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <button onclick="myFunction()">Click to Reveal Contact Info</button>
+    <p class="w3-large w3-center"><span id="contact"></span></p>
+  </div>
+  <div class="w3-display-bottomleft w3-padding-large"> Copyright
+    &copy; <div id="siteNameBottomLeft"></div> <span id="currentYear"></span>
+  </div>
+</div>
+<script>
+    const domain = location.hostname;
+    const siteName = domain;
+    document.getElementById("pageTitle").textContent = siteName;
+    document.getElementById("siteNameTopLeft").textContent = siteName;
+    document.getElementById("siteNameCenter").textContent = siteName;
+    document.getElementById("siteNameBottomLeft").textContent = siteName;
+  </script>
+<script>
+  function myFunction() {
+    var txt;
+    if (confirm("\n**Email & Response Guidelines**\n\nPlease follow these guidelines when making contact, and/or when expecting a response:\n\n- Use a clear and specific subject line.\n- Introduce yourself and clearly explain the reason for making contact.\n- Provide your full name, company name, and contact information, including your phone number.\n- Include all relevant information in your email to receive a response.\n- Get straight to the point. Assume your questions have been answered in both the affirmative and negative, and respond to each accordingly.\n- Be polite and professional in your email communication.\n\nIf you do not receive a response, either your email has been marked as spam, your email did not follow the above guidelines, or we are not interested in your inquiry. In the latter case of no response, assume that we are not interested in the contents of your email. It's possible that we may be busy or unable to respond immediately, but if you don't hear back after a reasonable amount of time (e.g., a few days to a week), it's safe to assume that we are not interested in your inquiry. In this case, it's best to move on and explore other options.")) {
+      var domainName = window.location.hostname;
+      var emailIndex = encodedEmails.findIndex(function(email) {
+        return atob(email).endsWith(domainName);
+      });
+      if (emailIndex !== -1) {
+        var email = atob(encodedEmails[emailIndex]);
+        txt = email;
+      } else {
+        txt = "No email address is available.";
+      }
+    } else {
+      txt = "You have not agreed to the email guidelines.";
+    }
+    document.getElementById("contact").innerHTML = txt;
+  }
+</script>
+<script src="https://e8.co.za/em_add.js"></script>
+<script>
+  const currentYear = new Date().getFullYear();
+  document.getElementById("currentYear").textContent = currentYear;
+</script>
+<script type="text/javascript">
+  var sc_project = 12893418;
+  var sc_invisible = 1;
+  var sc_security = "c8c37c17";
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript>
+  <div class="statcounter">
+    <img class="statcounter" src="https://c.statcounter.com/12893418/0/c8c37c17/1/" alt="" referrerPolicy="no-referrer-when-downgrade">
+  </div>
+</noscript>
+</body>
+</html>
